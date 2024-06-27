@@ -1,39 +1,12 @@
-# Compiler
-CC = gcc
+.PHONY: all
+all: generator primeCounter
 
-# Compiler flags
-CFLAGS = -Wall -Wextra -pthread
+generator:  generator.c
+	gcc -o randomGenerator generator.c
 
-# Linker flags
-LDFLAGS = -lm
+primeCounter:	primeCounter.c
+	gcc -o primeCounter primeCounter.c
 
-# Executable name
-EXEC = MyPrimeCounter
-
-# Source files
-SRC = main.c MyPrimeCounter.c
-
-# Object files
-OBJ = $(SRC:.c=.o)
-
-# Header files
-DEPS = MyPrimeCounter.h
-
-# Default target
-all: $(EXEC)
-
-# Linking the executable
-$(EXEC): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
-
-# Compiling the source files
-%.o: %.c $(DEPS)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-# Clean up object files and executable
+.PHONY: clean
 clean:
-	rm -f $(OBJ) $(EXEC)
-
-# Phony targets
-.PHONY: all clean
-
+	-rm randomGenerator primeCounter 2>/dev/null
