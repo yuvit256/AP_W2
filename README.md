@@ -30,6 +30,7 @@ To compile the programs, run the command in the project directory:
 
 ```sh
 make
+
 example of how to run the programs, run the command in the project directory:
 ```sh
 ./randomGenerator 10 10000000 | ./MyPrimeCounter
