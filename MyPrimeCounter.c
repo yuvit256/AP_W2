@@ -12,48 +12,49 @@ typedef struct
     int end;
     int primeCount;
 } ThreadData;
-// bool isPrime(int n)
-// {
-//     if (n <= 1)
-//     {
-//         return false;
-//     }
-//     if (n <= 3)
-//     {
-//         return true;
-//     }
-//     if (n % 2 == 0 || n % 3 == 0)
-//     {
-//         return false;
-//     }
-//     int sqrt_n = sqrt(n);
-//     for (int i = 5; i <= sqrt_n; i += 6)
-//     {
-//         if (n % i == 0 || n % (i + 2) == 0)
-//         {
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-
-
-//the is prime function that provided
 bool isPrime(int n)
 {
     if (n <= 1)
     {
         return false;
     }
-    for (int i = 2; i * i <= n; i++)
+    if (n <= 3)
     {
-        if (n % i == 0)
+        return true;
+    }
+    if (n % 2 == 0 || n % 3 == 0)
+    {
+        return false;
+    }
+    int sqrt_n = sqrt(n);
+    for (int i = 5; i <= sqrt_n; i += 6)
+    {
+        if (n % i == 0 || n % (i + 2) == 0)
         {
             return false;
         }
     }
     return true;
 }
+
+
+//the is prime function that provided
+
+// bool isPrime(int n)
+// {
+//     if (n <= 1)
+//     {
+//         return false;
+//     }
+//     for (int i = 2; i * i <= n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
 atomic_int totalPrimes = 0;
 
