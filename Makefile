@@ -8,7 +8,7 @@ primeCounter:	primeCounter.c
 	gcc -o primeCounter primeCounter.c
 
 MyPrimeCounter:  MyPrimeCounter.c
-	gcc -o MyPrimeCounter MyPrimeCounter.c -lm
+	gcc -o MyPrimeCounter MyPrimeCounter.c -lm -pthread
 
 .PHONY: clean
 clean:
