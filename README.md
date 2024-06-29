@@ -35,9 +35,9 @@ example of how to run the programs, run the command in the project directory:
 ```sh
 ./randomGenerator 10 10000000 | ./MyPrimeCounter
 
-
-examples of running:
 ```
+examples of running:
+
 <Cd>
 
 ![with improve the isPrime](https://github.com/ron12120/AP_W2/assets/76705730/e33656d7-b3b5-49d1-b053-7f54a947beba)
